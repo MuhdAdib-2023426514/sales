@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import sklearn
-imprt xgboost
+import xgboost
 
 st.write("# Aplikasi Ramalan Jualan Pernigaan")
 st.write("Aplikasi ini meramalkan **Jualan** anda!")
