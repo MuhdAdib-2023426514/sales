@@ -9,9 +9,9 @@ st.write("Aplikasi ini meramalkan **Jualan** anda!")
 st.sidebar.header('Berikan perbelanjaan pengiklanan anda')
 
 def user_input_features():
-    tv = st.sidebar.slider('TV', 0.0, 300.0, 1)
-    radio = st.sidebar.slider('Radio', 0.0, 50.0, 1)
-    newspaper = st.sidebar.slider('Surat Khabar', 0.0, 115.0, 1)
+    tv = st.sidebar.slider('TV', 0.0, 300.0, 1.0)
+    radio = st.sidebar.slider('Radio', 0.0, 50.0, 1.0)
+    newspaper = st.sidebar.slider('Surat Khabar', 0.0, 115.0, 1.0)
     data = {'TV': tv,
             'Radio': radio,
             'Surat Khabar': newspaper,}
@@ -23,7 +23,7 @@ df = user_input_features()
 st.subheader('Perbelanjaan pengiklanan anda')
 st.write(df)
 
-regressor = RandomForestRegressor(n_estimators=10, random_state=0, oob_score=True)
+regressor = pickle.load(open("salesrandomforestregressor.h5", "rb"))
 predictions = regressor.predict(df)
 
 st.subheader('Ramalan')
