@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import sklearn
 import xgboost
+import pickle
 
 st.write("# Aplikasi Ramalan Jualan Pernigaan")
 st.write("Aplikasi ini meramalkan **Jualan** anda!")
